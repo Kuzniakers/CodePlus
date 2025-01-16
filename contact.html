@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontakt - CodePlus Konrad Kuźniak">
+    <title>Kontakt | CodePlus</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                console.log(`Wiadomość od: ${name} (${email}): ${message}`);
+                alert('Twoja wiadomość została wysłana! Dziękujemy za kontakt.');
+
+                form.reset();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">CodePlus</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="news.html">Newsy</a></li>
+                <li><a href="about.html">O mnie</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact">
+            <h2>Kontakt</h2>
+            <form action="#" method="post">
+                <label for="name">Imię:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Wiadomość:</label>
+                <textarea id="message" name="message" required style="resize: none; max-width: 100%;"></textarea>
+
+                <button type="submit">Wyślij</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CodePlus Konrad Kuźniak. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
