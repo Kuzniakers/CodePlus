@@ -6,7 +6,50 @@
     <meta name="description" content="Projekty - CodePlus Konrad Kuźniak">
     <title>Projekty | CodePlus</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <style>
+        h2 {
+            text-align: center;
+            color: #f4a261;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-wrapper {
+            border: 1px solid #1b263b;
+            border-radius: 8px;
+            background-color: #0d1b2a;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-grid {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .project-item {
+            background-color: #0d1b2a;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 30%;
+        }
+
+        .project-item a {
+            color: #86e00f;
+            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-item p {
+            margin-top: 0.5rem;
+            color: #e0e1dd;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -24,14 +67,40 @@
 
     <main>
         <section id="projects">
-            <h1>Projekty</h1>
-            <div class="project-item">
-                <h3>System zarządzania magazynem</h3>
-                <p>Opracowany system umożliwiający efektywne zarządzanie zasobami w magazynie, z integracją w czasie rzeczywistym.</p>
+            <div class="section-wrapper">
+                <h2>Projekty Developerskie</h2>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <h3><a href="https://github.com/Kuzniakers/FabrykaCiast" target="_blank">Fabryka Ciast</a></h3>
+                        <p>Aplikacja webowa do zarządzania zamówieniami i produkcją w wirtualnej fabryce ciast.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3><a href="https://github.com/Kuzniakers/ShoeStore" target="_blank">Shoe Store</a></h3>
+                        <p>Platforma e-commerce zaprojektowana do sprzedaży obuwia z integracją systemu płatności.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3><a href="https://github.com/Kuzniakers/GameJS" target="_blank">Game JS</a></h3>
+                        <p>Gra przeglądarkowa stworzona w JavaScript z dynamiczną interakcją użytkownika.</p>
+                    </div>
+                </div>
             </div>
-            <div class="project-item">
-                <h3>Aplikacja mobilna do zarządzania czasem</h3>
-                <p>Aplikacja, która pomaga użytkownikom lepiej organizować swój czas, dostępna na platformy Android i iOS.</p>
+
+            <div class="section-wrapper">
+                <h2>Projekty Testowe</h2>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <h3><a href="https://github.com/Kuzniakers/PlaywrightTests" target="_blank">Playwright Tests</a></h3>
+                        <p>Zestaw testów automatycznych dla aplikacji webowych, zbudowany w oparciu o Playwright.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3><a href="https://github.com/Kuzniakers/Selenium" target="_blank">Selenium Tests</a></h3>
+                        <p>Testy automatyczne wykorzystujące Selenium, dostosowane do złożonych scenariuszy biznesowych.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3><a href="https://github.com/Kuzniakers/AllegroTest" target="_blank">Allegro Test</a></h3>
+                        <p>Przykład testowania funkcjonalności popularnej platformy e-commerce.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

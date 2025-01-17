@@ -166,3 +166,143 @@ footer {
     background-color: #f4a261;
     color: #0d1b2a;
 }
+
+a:visited {
+    color: #9c6909; 
+}
+.project-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.project-item {
+    background-color: #0d1b2a;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 30%;
+}
+
+.project-item a {
+    color: #f4a261;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-item p {
+    margin-top: 0.5rem;
+    color: #e0e1dd;
+}
+
+/* Wyśrodkowanie głównego nagłówka */
+.centered-text {
+    text-align: center;
+    color: #f4a261;
+}
+
+/* Styl dla tytułów sekcji */
+.section-title {
+    text-align: left;
+    color: #f4a261;
+}
+
+/* Usunięcie kropek z list */
+.no-list-style {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Poprawka dla nawigacji */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #141a04;
+    background-color: #f4a261;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #e76f51;
+    color: #ffffff;
+}
+/* Wyśrodkowanie tekstu */
+.centered-text {
+    text-align: center;
+    color: #f4a261;
+}
+
+/* Styl dla tytułów i nagłówków */
+h3 {
+    text-align: left;
+    color: #f4a261;
+}
+
+/* Ogólne poprawki układu */
+.project-grid, .stats-grid, .tech-grid {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.project-item, .stat {
+    background-color: #0d1b2a;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.project-item a, .stat h3 {
+    color: #f4a261;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-item p, .stat p {
+    color: #e0e1dd;
+}
+
+.project-item h3 {
+    text-align: center; /* Wyśrodkowanie tekstu */
+    color: #86e00f; /* Kolor nagłówka */
+    margin-bottom: 0.5rem; /* Dodanie przestrzeni poniżej nagłówka */
+}
+
+
+/* Dostosowanie dla ikon technologii */
+.tech-grid img {
+    max-width: 600px; 
+    height: auto; /* Zachowanie proporcji */
+    margin: 0 auto; /* Wyśrodkowanie ikony w ramach elementu */
+    display: block; /* Wymuszenie wyśrodkowania */
+}
+
+/* Dostosowanie wielkości dla konkretnych ikon */
+.tech-grid .tech-icon-playwright {
+    max-width: 60px; /* Specjalny rozmiar dla Playwright */
+}
+
+.tech-grid .tech-icon-jmeter {
+    max-width: 60px; /* Specjalny rozmiar dla JMeter */
+}
+
+.tech-grid .tech-icon-csharp {
+    max-width: 66px; /* Specjalny rozmiar dla C# */
+}

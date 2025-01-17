@@ -3,30 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CodePlus - Strona główna">
+    <meta name="description" content="Strona główna - CodePlus Konrad Kuźniak">
     <title>Strona główna | CodePlus</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <style>
+        /* Styl dla ikon */
+        .tech-grid img {
+            width: 50px; /* Szerokość ikon */
+            height: auto; /* Automatyczne skalowanie wysokości */
+        }
+
+        .centered-text {
+            text-align: center;
+            color: #f4a261;
+        }
+
+        h3 {
+            text-align: left;
+            color: #f4a261;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">CodePlus</div>
             <ul class="nav-links">
-                <li><a href="index.html" class="menu-button styled-button">Strona główna</a></li>
-                <li><a href="news.html" class="menu-button styled-button">Newsy</a></li>
-                <li><a href="about.html" class="menu-button styled-button">O mnie</a></li>
-                <li><a href="projects.html" class="menu-button styled-button">Projekty</a></li>
-                <li><a href="contact.html" class="menu-button styled-button">Kontakt</a></li>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="news.html">Newsy</a></li>
+                <li><a href="about.html">O mnie</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <h1>Witamy w CodePlus</h1>
-            <p>Profesjonalne usługi IT z pasją i doświadczeniem</p>
+            <h1 class="centered-text">Zaawansowane Testowanie Oprogramowania</h1>
+            <p class="centered-text">Wspieramy firmy na całym świecie, dostarczając niezawodne rozwiązania QA i automatyzację testów, które gwarantują najwyższą jakość produktów.</p>
         </section>
+
+        <section id="services">
+            <h2 class="centered-text">Czym się zajmuję?</h2>
+            <div class="service">
+                <h3>Automatyzacja testów</h3>
+                <p>Tworzymy zaawansowane testy automatyczne, wykorzystując Playwright, Selenium i inne narzędzia, aby zapewnić niezawodność aplikacji.</p>
+            </div>
+            <div class="service">
+                <h3>Testowanie API</h3>
+                <p>Skutecznie testujemy interfejsy API przy użyciu Postman i JMeter, dbając o ich wydajność i funkcjonalność.</p>
+            </div>
+            <div class="service">
+                <h3>Testowanie wydajności</h3>
+                <p>Analizujemy aplikacje pod kątem wydajności w różnych warunkach obciążenia.</p>
+            </div>
+        </section>
+
+
+        <section id="stats">
+            <h2 class="centered-text">Osiągnięcia</h2>
+            <div class="stats-grid">
+                <div class="stat">
+                    <h3>1000+</h3>
+                    <p>przeprowadzonych testów</p>
+                </div>
+                <div class="stat">
+                    <h3>30+</h3>
+                    <p>zadowolonych klientów</p>
+                </div>
+                <div class="stat">
+                    <h3>3 lata</h3>
+                    <p>doświadczenia w QA</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="technologies">
+            <h2 class="centered-text">Technologie i Frameworki </h2>
+            <br>
+            <div class="tech-grid">
+                <img src="selenium-logo.png" alt="Selenium" class="tech-icon">
+                <img src="playwright-logo.png" alt="Playwright" class="tech-icon tech-icon-playwright">
+                <img src="jmeter-logo.png" alt="JMeter" class="tech-icon tech-icon-jmeter">
+                <img src="postman-logo.jpg" alt="Postman" class="tech-icon">
+                <img src="csharp-logo.png" alt="C#" class="tech-icon tech-icon-csharp">
+                <img src="javascript-logo.png" alt="JavaScript" class="tech-icon">
+            </div>
+        </section>
+        
+        
     </main>
 
     <footer>
