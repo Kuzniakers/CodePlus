@@ -5,12 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="O mnie - CodePlus Konrad Kuźniak">
     <title>O mnie | CodePlus</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .section-title {
+            color: #f4a261;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">CodePlus</div>
+            <div class="logo">
+                <img src="imageslogo.png" alt="Logo" class="logo-image">
+            </div>
+            
             <ul class="nav-links">
                 <li><a href="index.html">Strona główna</a></li>
                 <li><a href="news.html">Newsy</a></li>
@@ -25,39 +53,41 @@
         <section id="about">
             <h1 class="centered-text">O mnie</h1>
             <div class="about-section">
+                <div class="about-photo">
+                    <img src="portret.jpg" alt="Konrad Kuźniak" />
+                </div>
                 <div class="about-text">
                     <h2 class="section-title">Kim jestem?</h2>
-                    <p>Nazywam się Konrad Kuźniak, jestem pasjonatem technologii z ponad 3-letnim doświadczeniem w branży IT. Pracuję jako <strong>Automated QA Engineer</strong>, gdzie specjalizuję się w testowaniu oprogramowania, automatyzacji procesów QA oraz w tworzeniu zaawansowanych scenariuszy testowych.</p>
+                    <p>Nazywam się Konrad Kuźniak, jestem pasjonatem technologii z ponad 3-letnim doświadczeniem w branży IT. Pracuję jako <strong>Automated QA Engineer</strong>, gdzie specjalizuję się w testowaniu oprogramowania, automatyzacji procesów QA oraz w tworzeniu zaawansowanych scenariuszy testowych. Dodatkowo, dzięki studiowaniu informatyki na Uniwesytecie Merito w Chorzowie nabyłem wiedzę w tworzeniu stron internetowych oraz aplikacji webowych.</p>
                 </div>
+            </div>
 
-                <div class="about-text">
-                    <br>
-                    <h2 class="section-title">Moje doświadczenie</h2>
-                    <ul class="no-list-style">
-                        <li><strong>Automatyzacja testów:</strong> Tworzenie i utrzymanie testów przy użyciu JavaScript i Executive Automats.</li>
-                        <li><strong>Testowanie wydajności:</strong> Praca z narzędziami takimi jak JMeter, Azure DevOps i Jira.</li>
-                        <li><strong>Praca z klientami:</strong> Obsługa klientów na całym świecie oraz dostosowywanie rozwiązań QA do ich potrzeb.</li>
-                    </ul>
-                </div>
+            <div class="about-text">
+                <h2 class="section-title">Moje doświadczenie</h2>
+                <ul class="no-list-style">
+                    <li><strong>Automatyzacja testów:</strong> Tworzenie i utrzymanie testów przy użyciu JavaScript i Executive Automats dla systemu Microsoft Dynamics365.</li>
+                    <li><strong>Testowanie wydajności:</strong> Praca z narzędziami takimi jak JMeter, Azure DevOps i Jira.</li>
+                    <li><strong>Praca z klientami:</strong> Obsługa klientów na całym świecie oraz dostosowywanie rozwiązań QA do ich potrzeb.</li>
+                </ul>
+            </div>
 
-                <div class="about-text">
-                    <br>
-                    <h2 class="section-title">Moje umiejętności</h2>
-                    <p>Posiadam certyfikat <strong>ISTQB Foundation Level</strong> oraz doświadczenie w pracy z językami programowania i narzędziami takimi jak:</p>
-                    <ul class="no-list-style">
-                        <li>C#</li>
-                        <li>JavaScript</li>
-                        <li>Selenium</li>
-                        <li>Azure DevOps</li>
-                        <li>HTML5 i CSS3</li>
-                    </ul>
-                </div>
-
-                <div class="about-text">
-                    <br>
-                    <h2 class="section-title">Moje cele</h2>
-                    <p>Chcę rozwijać się w obszarze automatyzacji testów, eksplorować nowe frameworki i zgłębiać wiedzę na temat infrastruktury chmurowej. Dążę do dostarczania najwyższej jakości rozwiązań, które spełniają wymagania biznesowe klientów.</p>
-                </div>
+            <div class="about-text">
+                <br>
+                <h2 class="section-title">Moje umiejętności</h2>
+                <p>Posiadam certyfikat <strong>ISTQB Foundation Level</strong> oraz doświadczenie w pracy z językami programowania i narzędziami takimi jak:</p><br>
+                <ul class="no-list-style">
+                    <li>C#</li>
+                    <li>JavaScript</li>
+                    <li>Selenium</li>
+                    <li>PlayWright </li>
+                    <li>Azure </li>
+                    <li>Jira</li>
+                </ul>
+            </div>
+<br>
+            <div class="about-text">
+                <h2 class="section-title">Moje cele</h2>
+                <p>Chcę rozwijać się w obszarze automatyzacji testów, eksplorować nowe frameworki i zgłębiać wiedzę na temat infrastruktury chmurowej. Dążę do dostarczania najwyższej jakości rozwiązań, które spełniają wymagania biznesowe klientów, pogłębiam swoją wiedzę na temat tworzenia stron internetowych oraz studiuje możliwości i zostosowania sztucznej inteligencji w życiu codziennym.</p>
             </div>
         </section>
     </main>

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
+/*
 document.addEventListener('DOMContentLoaded', () => {
     const clockContainer = document.createElement('div');
     clockContainer.id = 'clock';
@@ -27,5 +27,5 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateClock, 500);
     updateClock();
 });
-
+*/
 

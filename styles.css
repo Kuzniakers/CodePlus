@@ -306,3 +306,29 @@ h3 {
 .tech-grid .tech-icon-csharp {
     max-width: 66px; 
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px; /* Dopasuj wysokość, aby była podobna do napisu "CodePlus" */
+    width: auto;
+}
+
+.hero-logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 300px; /* Dostosuj rozmiar */
+    height: auto;
+    background-color: transparent;
+    border-radius: 50%; /* Zaokrąglenie */
+}
+
+.tagline {
+    font-size: 1.5rem; /* Mniejszy rozmiar niż tytuł */
+    color: #f4a261;
+    text-align: center;
+    margin-top: 0.5rem;
+}
