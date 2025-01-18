@@ -1,4 +1,4 @@
-/* Resetowanie stylów */
+
 * {
     margin: 0;
     padding: 0;
@@ -94,7 +94,7 @@ section {
     border: 1px solid #1b263b;
     border-radius: 8px;
     margin-bottom: 2rem;
-    padding: 2rem 1rem; /* Dopasowanie paddingu do głównej sekcji */
+    padding: 2rem 1rem; 
 }
 
 .project-item, .news-item {
@@ -151,7 +151,7 @@ footer {
     color: #e0e1dd;
 }
 
-/* Styl dla trybu ciemnego */
+
 .dark-mode {
     background-color: #0b1e30;
     color: #f4a261;
@@ -199,25 +199,25 @@ a:visited {
     color: #e0e1dd;
 }
 
-/* Wyśrodkowanie głównego nagłówka */
+
 .centered-text {
     text-align: center;
     color: #f4a261;
 }
 
-/* Styl dla tytułów sekcji */
+
 .section-title {
     text-align: left;
     color: #f4a261;
 }
 
-/* Usunięcie kropek z list */
+
 .no-list-style {
     list-style: none;
     padding-left: 0;
 }
 
-/* Poprawka dla nawigacji */
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -240,19 +240,19 @@ a:visited {
     background-color: #e76f51;
     color: #ffffff;
 }
-/* Wyśrodkowanie tekstu */
+
 .centered-text {
     text-align: center;
     color: #f4a261;
 }
 
-/* Styl dla tytułów i nagłówków */
+
 h3 {
     text-align: left;
     color: #f4a261;
 }
 
-/* Ogólne poprawki układu */
+
 .project-grid, .stats-grid, .tech-grid {
     display: flex;
     gap: 1rem;
@@ -280,29 +280,29 @@ h3 {
 }
 
 .project-item h3 {
-    text-align: center; /* Wyśrodkowanie tekstu */
-    color: #86e00f; /* Kolor nagłówka */
-    margin-bottom: 0.5rem; /* Dodanie przestrzeni poniżej nagłówka */
+    text-align: center; 
+    color: #86e00f; 
+    margin-bottom: 0.5rem; 
 }
 
 
-/* Dostosowanie dla ikon technologii */
+
 .tech-grid img {
     max-width: 600px; 
-    height: auto; /* Zachowanie proporcji */
-    margin: 0 auto; /* Wyśrodkowanie ikony w ramach elementu */
-    display: block; /* Wymuszenie wyśrodkowania */
+    height: auto; 
+    margin: 0 auto; 
+    display: block; 
 }
 
-/* Dostosowanie wielkości dla konkretnych ikon */
+
 .tech-grid .tech-icon-playwright {
-    max-width: 60px; /* Specjalny rozmiar dla Playwright */
+    max-width: 60px; 
 }
 
 .tech-grid .tech-icon-jmeter {
-    max-width: 60px; /* Specjalny rozmiar dla JMeter */
+    max-width: 60px; 
 }
 
 .tech-grid .tech-icon-csharp {
-    max-width: 66px; /* Specjalny rozmiar dla C# */
+    max-width: 66px; 
 }

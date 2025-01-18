@@ -6,24 +6,48 @@
     <meta name="description" content="Kontakt - CodePlus Konrad Kuźniak">
     <title>Kontakt | CodePlus</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.querySelector('form');
+    <style>
+        h2 {
+            text-align: center;
+            color: #f4a261; 
+            margin-bottom: 1.5rem;
+        }
+    </style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('form');
 
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); 
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
 
-                console.log(`Wiadomość od: ${name} (${email}): ${message}`);
-                alert('Twoja wiadomość została wysłana! Dziękujemy za kontakt.');
 
-                form.reset();
-            });
+            try {
+                const response = await fetch("https://script.google.com/macros/s/AKfycbx3371n7_iqx0dJv4zGKs953XkdLpUeHoK1tC7ktblc/dev", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.text();
+                alert(`Dziękujemy, ${name}! Twoja wiadomość została wysłana. 😊`);
+                form.reset(); 
+            } catch (error) {
+                console.error("Błąd podczas wysyłania formularza:", error);
+                alert("Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.");
+            }
         });
-    </script>
+    });
+</script>
+
 </head>
 <body>
     <header>
