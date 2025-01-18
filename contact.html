@@ -25,12 +25,12 @@
 
 
             try {
-                const response = await fetch("https://script.google.com/macros/s/AKfycbyZPuwlPYG-AQjzsgndcbqZUrJ-ud-pk2M8CACZk35r_dc0r5N-z_oQyz9_Ek1uKqhn_A/exec", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({ name, email, message }),
+                const response = await fetch('/api', {
+                 method: "POST",
+                 headers: {
+                     "Content-Type": "application/json",
+              },
+                 body: JSON.stringify({ name, email, message }),
                 });
 
                 if (!response.ok) {
