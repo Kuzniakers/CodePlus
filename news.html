@@ -6,39 +6,39 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
         import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
-    
-        // Konfiguracja Firebase
+
+        // Nowa konfiguracja Firebase
         const firebaseConfig = {
-            apiKey: "AIzaSyAgdihpqE4Vs8gi9wipmrLHi0e5CsabJR4",
-            authDomain: "komentarze-86272.firebaseapp.com",
-            projectId: "komentarze-86272",
-            storageBucket: "komentarze-86272.firebasestorage.app",
-            messagingSenderId: "932599776767",
-            appId: "1:932599776767:web:c189f53596daf5e57513ca",
-            measurementId: "G-DGCED5ETDE"
+            apiKey: "AIzaSyDIKZ8yBM-Zq1318fakm_gYu5BeY6nBBq8",
+            authDomain: "comments-41d87.firebaseapp.com",
+            projectId: "comments-41d87",
+            storageBucket: "comments-41d87.firebasestorage.app",
+            messagingSenderId: "664007142861",
+            appId: "1:664007142861:web:bc8cdeb14254c5ab812884",
+            measurementId: "G-L9823EP2YV"
         };
-    
+
         // Inicjalizacja Firebase
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
-    
+
         // Obsługa dodawania komentarzy
         document.querySelectorAll('.comment-section form').forEach((form) => {
             const newsItem = form.closest('.news-item');
             const newsId = newsItem.getAttribute('data-news-id');
-    
+
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const username = form.querySelector('input').value.trim();
                 const comment = form.querySelector('textarea').value.trim();
-    
+
                 if (!username || !comment) {
                     alert('Wypełnij wszystkie pola!');
                     return;
                 }
-    
+
                 try {
-                    await addDoc(collection(db, "Komentarze"), {
+                    await addDoc(collection(db, "comments"), {
                         newsId: newsId,
                         username: username,
                         comment: comment,
@@ -51,17 +51,17 @@
                 }
             });
         });
-    
+
         // Pobieranie i wyświetlanie komentarzy
         document.querySelectorAll('.news-item').forEach((newsItem) => {
             const newsId = newsItem.getAttribute('data-news-id');
             const commentsList = newsItem.querySelector('.comments-list');
-    
+
             const q = query(
-                collection(db, "Komentarze"),
+                collection(db, "comments"),
                 orderBy("timestamp", "asc")
             );
-    
+
             onSnapshot(q, (snapshot) => {
                 commentsList.innerHTML = '';
                 snapshot.forEach((doc) => {
@@ -75,7 +75,7 @@
             });
         });
     </script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Newsy - CodePlus Konrad Kuźniak">
@@ -197,8 +197,6 @@
     <main>
         <section id="news">
             <h1>Newsy</h1>
-
-            <!-- News 1 -->
             <div class="news-item" data-news-id="1">
                 <h3>Szkolenie AI od Googla</h3>
                 <p>🎉 Dosyć przyjemna informacja spotkała mnie, gdy przeglądając swojego maila w stosie spamu, znalazłem informację o dostaniu się do prestiżowego programu szkoleniowego organizowanego przez Google, który skupia się na rozwijaniu umiejętności z zakresu sztucznej inteligencji. W ramach szkolenia uczestnicy będą mieli okazję nauczyć się praktycznych zastosowań AI, korzystając z najnowszych technologii.</p>
@@ -214,8 +212,6 @@
                     <div class="comments-list"></div>
                 </div>
             </div>
-
-            <!-- News 2 -->
             <div class="news-item" data-news-id="2">
                 <h3>Power Automate – Nowoczesna Automatyzacja Procesów</h3>
                 <p>🚀 Dzięki szkoleniom, które odbywam obecnie w Xplusie, dla którego głównie obecnie pracuję, rozpocząłem eksplorację narzędzia Power Automate, które umożliwia automatyzację codziennych procesów biznesowych. Dzięki temu narzędziu można zredukować czasochłonne zadania i usprawnić pracę zespołów, korzystając z integracji z wieloma popularnymi aplikacjami. Całkiem przyjemne rozwiązanie!</p>
@@ -230,8 +226,6 @@
                     <div class="comments-list"></div>
                 </div>
             </div>
-
-            <!-- News 3 -->
             <div class="news-item" data-news-id="3">
                 <h3>Zuckerberg i jego przemyślenia</h3>
                 <p>🤖 Mark Zuckerberg, CEO firmy Meta, podzielił się swoją wizją dotyczącą przyszłości sztucznej inteligencji. Według jego wypowiedzi, już w 2025 roku AI w Meta osiągnie poziom mid developerów, co może oznaczać rewolucję w branży IT i koniec kodowania, jakie znamy.</p>
@@ -248,14 +242,8 @@
             </div>
         </section>
     </main>
-
     <footer>
         <p>&copy; 2025 CodePlus Konrad Kuźniak. Wszystkie prawa zastrzeżone.</p>
     </footer>
 </body>
 </html>
-
-
-
-
-
