@@ -25,10 +25,36 @@
 
         .about-text {
             flex: 1;
+            text-align: left;
+            margin-left: 0;
+            padding-left: 1rem;
         }
 
         .section-title {
             color: #f4a261;
+            text-align: left;
+        }
+
+        .no-list-style {
+            list-style: disc inside;
+            padding-left: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: flex-start;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: #f4a261;
+            font-weight: bold;
+        }
+
+        .social-section {
+            margin-left: 0;
+            padding-left: 1rem;
         }
     </style>
 </head>
@@ -38,7 +64,6 @@
             <div class="logo">
                 <img src="imageslogo.png" alt="Logo" class="logo-image">
             </div>
-            
             <ul class="nav-links">
                 <li><a href="index.html">Strona główna</a></li>
                 <li><a href="news.html">Newsy</a></li>
@@ -79,15 +104,24 @@
                     <li>C#</li>
                     <li>JavaScript</li>
                     <li>Selenium</li>
-                    <li>PlayWright </li>
-                    <li>Azure </li>
+                    <li>PlayWright</li>
+                    <li>Azure</li>
                     <li>Jira</li>
                 </ul>
             </div>
 <br>
             <div class="about-text">
                 <h2 class="section-title">Moje cele</h2>
-                <p>Chcę rozwijać się w obszarze automatyzacji testów, eksplorować nowe frameworki i zgłębiać wiedzę na temat infrastruktury chmurowej. Dążę do dostarczania najwyższej jakości rozwiązań, które spełniają wymagania biznesowe klientów, pogłębiam swoją wiedzę na temat tworzenia stron internetowych oraz studiuje możliwości i zostosowania sztucznej inteligencji w życiu codziennym.</p>
+                <p>Chcę rozwijać się w obszarze automatyzacji testów, eksplorować nowe frameworki i zgłębiać wiedzę na temat infrastruktury chmurowej. Dążę do dostarczania najwyższej jakości rozwiązań, które spełniają wymagania biznesowe klientów, pogłębiam swoją wiedzę na temat tworzenia stron internetowych oraz studiuje możliwości i zastosowania sztucznej inteligencji w życiu codziennym😊</p>
+            </div>
+<br>
+            <div class="about-text social-section">
+                <h2 class="section-title">Social Media</h2>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/konrad-ku%C5%BAniak-96912323b/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Kuzniakers/" target="_blank">GitHub</a>
+                    <a href="https://www.facebook.com/konrad.kuzniak.7" target="_blank">Facebook</a>
+                </div>
             </div>
         </section>
     </main>
@@ -97,3 +131,5 @@
     </footer>
 </body>
 </html>
+
+
