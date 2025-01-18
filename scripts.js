@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 /*
 document.addEventListener('DOMContentLoaded', () => {
     const clockContainer = document.createElement('div');

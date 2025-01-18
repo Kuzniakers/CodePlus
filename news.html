@@ -7,7 +7,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
         import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
 
-        // Nowa konfiguracja Firebase
+      
         const firebaseConfig = {
             apiKey: "AIzaSyDIKZ8yBM-Zq1318fakm_gYu5BeY6nBBq8",
             authDomain: "comments-41d87.firebaseapp.com",
@@ -18,11 +18,11 @@
             measurementId: "G-L9823EP2YV"
         };
 
-        // Inicjalizacja Firebase
+       
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        // Obsługa dodawania komentarzy
+       
         document.querySelectorAll('.comment-section form').forEach((form) => {
             const newsItem = form.closest('.news-item');
             const newsId = newsItem.getAttribute('data-news-id');
@@ -52,28 +52,30 @@
             });
         });
 
-        // Pobieranie i wyświetlanie komentarzy
-        document.querySelectorAll('.news-item').forEach((newsItem) => {
-            const newsId = newsItem.getAttribute('data-news-id');
-            const commentsList = newsItem.querySelector('.comments-list');
 
-            const q = query(
-                collection(db, "comments"),
-                orderBy("timestamp", "asc")
-            );
 
-            onSnapshot(q, (snapshot) => {
-                commentsList.innerHTML = '';
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    if (data.newsId === newsId) {
-                        const commentDiv = document.createElement('div');
-                        commentDiv.innerHTML = `<strong>${data.username}:</strong> ${data.comment}`;
-                        commentsList.appendChild(commentDiv);
-                    }
-                });
-            });
+    document.querySelectorAll('.news-item').forEach((newsItem) => {
+    const newsId = newsItem.getAttribute('data-news-id');
+    const commentsList = newsItem.querySelector('.comments-list');
+
+    const q = query(
+        collection(db, "comments"), 
+        orderBy("timestamp", "asc") 
+    );
+
+    onSnapshot(q, (snapshot) => {
+        commentsList.innerHTML = ''; 
+        snapshot.forEach((doc) => {
+            const data = doc.data();
+            if (data.newsId === newsId) {
+                const commentDiv = document.createElement('div');
+                commentDiv.innerHTML = `<strong>${data.username}:</strong> ${data.comment}`;
+                commentsList.appendChild(commentDiv);
+            }
         });
+    });
+});
+
     </script>
 
     <meta charset="UTF-8">
@@ -199,7 +201,7 @@
             <h1>Newsy</h1>
             <div class="news-item" data-news-id="1">
                 <h3>Szkolenie AI od Googla</h3>
-                <p>🎉 Dosyć przyjemna informacja spotkała mnie, gdy przeglądając swojego maila w stosie spamu, znalazłem informację o dostaniu się do prestiżowego programu szkoleniowego organizowanego przez Google, który skupia się na rozwijaniu umiejętności z zakresu sztucznej inteligencji. W ramach szkolenia uczestnicy będą mieli okazję nauczyć się praktycznych zastosowań AI, korzystając z najnowszych technologii.</p>
+                <p>🎉 Dosyć przyjemna informacja spotkała mnie, gdy przeglądając swojego maila w stosie spamu, znalazłem informację o dostaniu się do prestiżowego programu szkoleniowego organizowanego przez <b>Google</b>, który skupia się na rozwijaniu umiejętności z zakresu sztucznej inteligencji. W ramach szkolenia uczestnicy będą mieli okazję nauczyć się praktycznych zastosowań AI, korzystając z najnowszych technologii.</p>
                 <p>Program zapewnia nie tylko cenną wiedzę, ale również oficjalny certyfikat potwierdzający ukończenie kursu. To doskonała okazja, by zdobyć nowe umiejętności i poszerzyć swoje kompetencje w branży technologicznej. Szkolenie zaczyna się 27.01 i już nie mogę się doczekać! 🎉</p>
                 <img src="Potwierdzenie.png" alt="Umiejętności Jutra AI" class="news-image">
                 <div class="comment-section">

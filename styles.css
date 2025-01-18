@@ -313,21 +313,25 @@ h3 {
 }
 
 .logo-image {
-    height: 50px; /* Dopasuj wysokość, aby była podobna do napisu "CodePlus" */
+    height: 50px; 
     width: auto;
+    overflow: hidden;
+    width: 50px;
+    border-radius: 50%;
+    
 }
 
 .hero-logo {
     display: block;
     margin: 0 auto;
-    max-width: 300px; /* Dostosuj rozmiar */
+    max-width: 300px; 
     height: auto;
     background-color: transparent;
-    border-radius: 50%; /* Zaokrąglenie */
+    border-radius: 50%; 
 }
 
 .tagline {
-    font-size: 1.5rem; /* Mniejszy rozmiar niż tytuł */
+    font-size: 1.5rem; 
     color: #f4a261;
     text-align: center;
     margin-top: 0.5rem;
@@ -336,38 +340,39 @@ h3 {
 
 @media screen and (max-width: 768px) {
     .nav-links {
-        flex-wrap: wrap; /* Zmienia ułożenie elementów na telefonach */
-        justify-content: center; /* Wyrównuje linki na środku */
-        gap: 0.5rem; /* Zmniejsza odstępy między linkami */
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 0.5rem; 
     }
 
     .logo-image {
-        height: 40px; /* Zmniejsza rozmiar logo */
-        width: auto; /* Zachowuje proporcje logo */
+        height: 40px; 
+        width: auto; 
+        overflow: hidden;
     }
 
     #hero {
-        padding: 3rem 1rem; /* Zmniejsza padding sekcji hero */
+        padding: 3rem 1rem; 
     }
 
     #hero h1 {
-        font-size: 1.8rem; /* Zmniejsza rozmiar nagłówka */
+        font-size: 1.8rem; 
     }
 
     #hero p {
-        font-size: 1rem; /* Zmniejsza rozmiar opisu w hero */
+        font-size: 1rem; 
     }
 }
 
 .about-text ul {
     list-style: disc inside;
-    padding-left: 1rem; /* Dopasowanie marginesu do boxa */
-    margin-left: 0; /* Usuń domyślne wcięcie */
+    padding-left: 1rem; 
+    margin-left: 0; 
 }
 
 .about-text {
-    margin-left: 0; /* Usuń niepotrzebne marginesy */
-    padding-left: 1rem; /* Wyrównanie do lewej strony */
+    margin-left: 0; 
+    padding-left: 1rem; 
     text-align: left;
 }
 
