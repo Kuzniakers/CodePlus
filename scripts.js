@@ -29,33 +29,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 */
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-document.getElementById('comment-form').addEventListener('submit', (e) => {
-    e.preventDefault(); // Zapobiega odświeżeniu strony
-
-    const username = document.getElementById('username').value;
-    const comment = document.getElementById('comment').value;
-
-    // Dodaj komentarz do bazy danych
-    firebase.database().ref('comments').push({
-        username: username,
-        comment: comment,
-        timestamp: Date.now()
-    });
-
-    // Wyczyść formularz
-    document.getElementById('comment-form').reset();
-});
-
