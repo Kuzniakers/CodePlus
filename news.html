@@ -3,7 +3,11 @@
 <head>
     <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js"></script>
-    <script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+        import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
+    
+        // Konfiguracja Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyAgdihpqE4Vs8gi9wipmrLHi0e5CsabJR4",
             authDomain: "komentarze-86272.firebaseapp.com",
@@ -13,11 +17,65 @@
             appId: "1:932599776767:web:c189f53596daf5e57513ca",
             measurementId: "G-DGCED5ETDE"
         };
-
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
+    
+        // Inicjalizacja Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+    
+        // Obsługa dodawania komentarzy
+        document.querySelectorAll('.comment-section form').forEach((form) => {
+            const newsItem = form.closest('.news-item');
+            const newsId = newsItem.getAttribute('data-news-id');
+    
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const username = form.querySelector('input').value.trim();
+                const comment = form.querySelector('textarea').value.trim();
+    
+                if (!username || !comment) {
+                    alert('Wypełnij wszystkie pola!');
+                    return;
+                }
+    
+                try {
+                    await addDoc(collection(db, "Komentarze"), {
+                        newsId: newsId,
+                        username: username,
+                        comment: comment,
+                        timestamp: new Date(),
+                    });
+                    form.reset();
+                } catch (error) {
+                    console.error('Błąd:', error);
+                    alert('Nie udało się dodać komentarza. Spróbuj ponownie.');
+                }
+            });
+        });
+    
+        // Pobieranie i wyświetlanie komentarzy
+        document.querySelectorAll('.news-item').forEach((newsItem) => {
+            const newsId = newsItem.getAttribute('data-news-id');
+            const commentsList = newsItem.querySelector('.comments-list');
+    
+            const q = query(
+                collection(db, "Komentarze"),
+                orderBy("timestamp", "asc")
+            );
+    
+            onSnapshot(q, (snapshot) => {
+                commentsList.innerHTML = '';
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    if (data.newsId === newsId) {
+                        const commentDiv = document.createElement('div');
+                        commentDiv.innerHTML = `<strong>${data.username}:</strong> ${data.comment}`;
+                        commentsList.appendChild(commentDiv);
+                    }
+                });
+            });
+        });
     </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Newsy - CodePlus Konrad Kuźniak">
@@ -197,53 +255,7 @@
 </body>
 </html>
 
-<script>
-    // Pobieranie komentarzy
-    document.querySelectorAll('.news-item').forEach((newsItem) => {
-        const newsId = newsItem.getAttribute('data-news-id');
-        const commentsList = newsItem.querySelector('.comments-list');
 
-        db.collection('Komentarze')
-            .where('newsId', '==', newsId)
-            .orderBy('timestamp', 'asc')
-            .onSnapshot((snapshot) => {
-                commentsList.innerHTML = '';
-                snapshot.forEach((doc) => {
-                    const data = doc.data();
-                    const commentDiv = document.createElement('div');
-                    commentDiv.innerHTML = `<strong>${data.username}:</strong> ${data.comment}`;
-                    commentsList.appendChild(commentDiv);
-                });
-            });
-    });
 
-    // Dodawanie komentarzy
-    document.querySelectorAll('.comment-section form').forEach((form) => {
-        const newsItem = form.closest('.news-item');
-        const newsId = newsItem.getAttribute('data-news-id');
 
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const username = form.querySelector('input').value.trim();
-            const comment = form.querySelector('textarea').value.trim();
 
-            if (!username || !comment) {
-                alert('Wypełnij wszystkie pola!');
-                return;
-            }
-
-            try {
-                await db.collection('Komentarze').add({
-                    newsId: newsId,
-                    username: username,
-                    comment: comment,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                });
-                form.reset();
-            } catch (error) {
-                console.error('Błąd:', error);
-                alert('Nie udało się dodać komentarza. Spróbuj ponownie.');
-            }
-        });
-    });
-</script>
