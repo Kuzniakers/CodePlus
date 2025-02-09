@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
@@ -55,12 +56,12 @@
             const commentsList = newsItem.querySelector('.comments-list');
 
             const q = query(
-                collection(db, "comments"), 
-                orderBy("timestamp", "asc") 
+                collection(db, "comments"),
+                orderBy("timestamp", "asc")
             );
 
             onSnapshot(q, (snapshot) => {
-                commentsList.innerHTML = ''; 
+                commentsList.innerHTML = '';
                 snapshot.forEach((doc) => {
                     const data = doc.data();
                     if (data.newsId === newsId) {
@@ -80,211 +81,53 @@
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            
-            background: linear-gradient(to bottom, #0d1b2a, #1e3a5f);
-            color: #e0e1dd;
-            line-height: 1.6;
-            margin: 0 auto;
-            max-width: 1200px;
-            overflow-x: hidden;
-        }
-
-        header {
-            background-color: #0d1b2a;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: bold;
-            
-        }
-
-        nav {
-            display: flex;
-            gap: 1rem;
-            margin-left: auto;
-            margin-right: 0px;
-            
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-           
-        }
-
-        .logo img {
-            width: 70px;
-            height: auto;
-            border-radius: 50%;
-           
-        }
-
-        .nav-links li {
-            list-style: none;
-            
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #0d1b2a;
-            background-color: #f4a261;
-            font-weight: bold;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            background-color: #e76f51;
-            color: #ffffff;
-            transform: scale(1.05);
-        }
-
-        h1 {
-            text-align: center;
-            color: #f4a261; 
-            
-        }
-
-        h3 {
-            text-align: left;
-            color: #f4a261; 
-            
-        }
-
         .news-item {
-            margin: 20px auto;
-            padding: 15px;
-            border: 1px solid #1b263b;
-            border-radius: 8px;
-            background: linear-gradient(to bottom, #0d1b2a, #1e3a5f);
-            max-width: 800px;
-            box-sizing: border-box;
+            transition: none !important; /* Usunięcie przejścia */
+        }
+
+        .news-item:hover {
+            transform: none !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+         
         }
 
         .news-item p {
-            color: #e0e1dd;
-            margin-bottom: 15px;
-            
-            
-        }
-
-        .news-image {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 10px;
-            display: block;
-            margin: 15px auto;
-            
-        }
-
-        iframe {
-            display: block;
-            margin: 15px auto;
-            width: 100%;
-            max-width: 560px;
-            height: 315px;
-            border-radius: 15px;
-            
-        }
-
-        .comment-section {
-            margin-top: 20px;
-            padding: 15px;
-            border-top: 1px solid #1b263b;
             text-align: left;
-        }
-
-        .comment-section h4 {
-            color: #f4a261;
-            margin-bottom: 10px;
-        }
-
-        .comment-section input,
-        .comment-section textarea,
-        .comment-section button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #1b263b;
-            border-radius: 4px;
-            background-color: #1b263b;
-            color: #e0e1dd;
-            box-sizing: border-box;
-        }
-
-        .comment-section textarea {
-            resize: none;
-        }
-
-        .comment-section button {
-            background-color: #f4a261;
-            color: #0d1b2a;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .comment-section button:hover {
-            background-color: #e76f51;
-        }
-
-        .comments-list {
-            margin-top: 20px;
-        }
-
-        .comments-list div {
-            margin-bottom: 10px;
-            color: #e0e1dd;
-        }
-
-        .comments-list strong {
-            color: #f4a261;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #0d1b2a;
-            color: #e0e1dd;
-            font-size: 0.9rem;
-            border-top: 2px solid #1b263b;
+            font-size: 1rem;
         }
     </style>
 </head>
+
 <body>
     <header>
-        <div class="logo"><img src="imageslogo.png" alt="Logo">CodePlus</div>
+        <div class="logo fade-in-up"><img src="imageslogo.png" alt="Logo">CodePlus</div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html" class="menu-button styled-button">Strona główna</a></li>
-                <li><a href="news.html" class="menu-button styled-button">Newsy</a></li>
-                <li><a href="about.html" class="menu-button styled-button">O mnie</a></li>
-                <li><a href="projects.html" class="menu-button styled-button">Projekty</a></li>
-                <li><a href="contact.html" class="menu-button styled-button">Kontakt</a></li>
+                <li><a href="index.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.1s;">Strona
+                        główna</a></li>
+                <li><a href="news.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.2s;">Newsy</a></li>
+                <li><a href="about.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.3s;">O mnie</a></li>
+                <li><a href="projects.html" class="menu-button styled-button fade-in-up"
+                        style="transition-delay: 0.4s;">Projekty</a></li>
+                <li><a href="contact.html" class="menu-button styled-button fade-in-up"
+                        style="transition-delay: 0.5s;">Kontakt</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="news">
-            <h1>Newsy</h1>
-            <div class="news-item" data-news-id="1">
-                <h3>Szkolenie AI od Googla</h3>
-                <p>🎉 Dosyć przyjemna informacja spotkała mnie, gdy przeglądając swojego maila w stosie spamu, znalazłem informację o dostaniu się do prestiżowego programu szkoleniowego organizowanego przez <b>Google</b>, który skupia się na rozwijaniu umiejętności z zakresu sztucznej inteligencji. W ramach szkolenia uczestnicy będą mieli okazję nauczyć się praktycznych zastosowań AI, korzystając z najnowszych technologii.
+            <h1 class="fade-in-up" style="color: #f4a261; font-size: 2rem">Newsy</h1>
+            <div class="news-item fade-in-up" data-news-id="1">
+                <h3 style="text-align: center;">Szkolenie AI od Googla</h3>
+                <p>🎉 Dosyć przyjemna informacja spotkała mnie, gdy przeglądając swojego maila w stosie spamu, znalazłem informację o
+                    dostaniu się do prestiżowego programu szkoleniowego organizowanego przez <b>Google</b>, który skupia się na rozwijaniu
+                    umiejętności z zakresu sztucznej inteligencji. W ramach szkolenia uczestnicy będą mieli okazję nauczyć się
+                    praktycznych zastosowań AI, korzystając z najnowszych technologii.
                 </p>
-                <p>Program zapewnia nie tylko cenną wiedzę, ale również oficjalny certyfikat potwierdzający ukończenie kursu. To doskonała okazja, by zdobyć nowe umiejętności i poszerzyć swoje kompetencje w branży technologicznej. Szkolenie zaczyna się 27.01 i już nie mogę się doczekać! 🎉</p>
+                <p>Program zapewnia nie tylko cenną wiedzę, ale również oficjalny certyfikat potwierdzający ukończenie kursu. To
+                    doskonała okazja, by zdobyć nowe umiejętności i poszerzyć swoje kompetencje w branży technologicznej. Szkolenie
+                    zaczyna się 27.01 i już nie mogę się doczekać! 🎉</p>
                 <img src="Potwierdzenie.png" alt="Umiejętności Jutra AI" class="news-image">
                 <div class="comment-section">
                     <h4>Dodaj komentarz:</h4>
@@ -296,10 +139,14 @@
                     <div class="comments-list"></div>
                 </div>
             </div>
-            <div class="news-item" data-news-id="2">
-                <h3>Power Automate – Nowoczesna Automatyzacja Procesów</h3>
-                <p>🚀 Dzięki szkoleniom, które odbywam obecnie w Xplusie, dla którego głównie obecnie pracuję, rozpocząłem eksplorację narzędzia Power Automate, które umożliwia automatyzację codziennych procesów biznesowych. Dzięki temu narzędziu można zredukować czasochłonne zadania i usprawnić pracę zespołów, korzystając z integracji z wieloma popularnymi aplikacjami. Całkiem przyjemne rozwiązanie!</p>
-                <p>Power Automate jest doskonałym rozwiązaniem dla firm chcących wprowadzić efektywną automatyzację bez potrzeby zaawansowanego kodowania. Wkrótce planuję wdrożyć pierwsze rozwiązania z jego wykorzystaniem! 🚀</p>
+            <div class="news-item fade-in-up" data-news-id="2">
+                <h3 style="text-align: center;">Power Automate – Nowoczesna Automatyzacja Procesów</h3>
+                <p>🚀 Dzięki szkoleniom, które odbywam obecnie w Xplusie, dla którego głównie obecnie pracuję, rozpocząłem eksplorację
+                    narzędzia Power Automate, które umożliwia automatyzację codziennych procesów biznesowych. Dzięki temu narzędziu można
+                    zredukować czasochłonne zadania i usprawnić pracę zespołów, korzystając z integracji z wieloma popularnymi
+                    aplikacjami. Całkiem przyjemne rozwiązanie!</p>
+                <p>Power Automate jest doskonałym rozwiązaniem dla firm chcących wprowadzić efektywną automatyzację bez potrzeby
+                    zaawansowanego kodowania. Wkrótce planuję wdrożyć pierwsze rozwiązania z jego wykorzystaniem! 🚀</p>
                 <div class="comment-section">
                     <h4>Dodaj komentarz:</h4>
                     <form>
@@ -310,10 +157,13 @@
                     <div class="comments-list"></div>
                 </div>
             </div>
-            <div class="news-item" data-news-id="3">
-                <h3>Zuckerberg i jego przemyślenia</h3>
-                <p>🤖 Mark Zuckerberg, CEO firmy Meta, podzielił się swoją wizją dotyczącą przyszłości sztucznej inteligencji. Według jego wypowiedzi, już w 2025 roku AI w Meta osiągnie poziom mid developerów, co może oznaczać rewolucję w branży IT i koniec kodowania, jakie znamy.</p>
-                <iframe src="https://www.youtube.com/embed/oDyFHxTr7Ig" title="Mark Zuckerberg AI Vision" allowfullscreen></iframe>
+            <div class="news-item fade-in-up" data-news-id="3">
+                <h3 style="text-align: center;">Zuckerberg i jego przemyślenia</h3>
+                <p>🤖 Mark Zuckerberg, CEO firmy Meta, podzielił się swoją wizją dotyczącą przyszłości sztucznej inteligencji. Według jego
+                    wypowiedzi, już w 2025 roku AI w Meta osiągnie poziom mid developerów, co może oznaczać rewolucję w branży IT i
+                    koniec kodowania, jakie znamy.</p>
+                <iframe src="https://www.youtube.com/embed/oDyFHxTr7Ig" title="Mark Zuckerberg AI Vision"
+                    allowfullscreen></iframe>
                 <div class="comment-section">
                     <h4>Dodaj komentarz:</h4>
                     <form>
@@ -328,7 +178,33 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 CodePlus Konrad Kuźniak. Wszystkie prawa zastrzeżone.</p>
+        <p>© 2025 CodePlus Konrad Kuźniak. Wszystkie prawa zastrzeżone.</p>
     </footer>
+    <script>
+        const faders = document.querySelectorAll(".fade-in-up");
+
+        const appearOptions = {
+            threshold: 0.15
+        };
+
+        const appearOnScroll = new IntersectionObserver(function (
+            entries,
+            appearOnScroll
+        ) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add("active");
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
 </body>
+
 </html>

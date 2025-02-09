@@ -6,62 +6,62 @@
   <meta name="description" content="Projekty - CodePlus Konrad Kuźniak">
   <title>Projekty | CodePlus</title>
   <link rel="icon" type="image/x-icon" href="favicon.png">
-  <!-- Import czcionki Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- Czcionka Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
-    /* Upewnij się, że html i body zajmują 100% wysokości */
-    html, body {
-      height: 100%;
-    }
-    /* Ustawienie struktury flex, aby main rozciągał się i wypychał stopkę na dół */
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #0d1b2a, #1e3a5f);
-      color: #e0e1dd;
-      line-height: 1.6;
-      margin: 0 auto;
-      max-width: 1200px;
-      overflow-x: hidden;
-    }
-    main {
-      flex: 1;
-    }
-    /* Globalne ustawienia */
+    /* RESET MARGINESÓW */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    /* Nagłówek */
+
+    /* GŁÓWNY UKŁAD STRONY */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0d1b2a, #1e3a5f);
+      color: #e0e1dd;
+      line-height: 1.6;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow-x: hidden;
+    }
+
+    /* NAGŁÓWEK (HEADER) */
     header {
       background-color: #0d1b2a;
       padding: 1rem 2rem;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid #1b263b;
+      font-weight: bold;
+      border-bottom: 2px solid #f4a261;
     }
+
     .logo {
       display: flex;
       align-items: center;
       gap: 15px;
+      color: #f4a261;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
     }
     .logo img {
       width: 70px;
       height: auto;
       border-radius: 50%;
     }
-   
-    
-    /* Menu – ujednolicone z About i Contact */
+
     nav {
       display: flex;
       gap: 1rem;
       margin-left: auto;
-      margin-right: 0px;
+      margin-right: 0;
+      align-items: center;
     }
     .nav-links {
       list-style: none;
@@ -70,36 +70,53 @@
       margin: 0;
       padding: 0;
     }
-    .nav-links li {
-      list-style: none;
-    }
     .nav-links a {
-        text-decoration: none;
+      text-decoration: none;
       color: #0d1b2a;
       background-color: #f4a261;
-      font-weight: bold;
       border-radius: 12px;
-      font-size: 1.1rem;
       transition: all 0.3s ease;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      display: block;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
     .nav-links a:hover {
       background-color: #e76f51;
       color: #ffffff;
-      transform: scale(1.05);
     }
-    h2 {
-      text-align: center;
+
+    /* GŁÓWNA ZAWARTOŚĆ */
+    main {
+      padding: 1.5rem 0;
+    }
+
+    /* SEKCJA "PROJEKTY" */
+    #projects {
+      min-height: 70vh;  /* Rozciąga sekcję przy małej liczbie projektów */
+      margin-bottom: 0;  /* Usunięty dodatkowy odstęp pod sekcją */
+    }
+
+    /* Tytuły w sekcji */
+    .section-title {
+      font-size: 2rem;
       color: #f4a261;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
-    /* Sekcje projektów – styl inspirowany About/Contact */
-    .section-wrapper {
-      background-color: #142235;
+
+    /* Kontenery (grupy) projektów */
+    .projects-group {
+      background-color: #0a1422; /* Tło kontenera */
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       padding: 2rem;
       margin-bottom: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
+
+    /* Układ kart projektów */
     .project-grid {
       display: flex;
       gap: 2rem;
@@ -107,13 +124,21 @@
       flex-wrap: wrap;
       margin-top: 1.5rem;
     }
+
+    /* POJEDYNCZY PROJEKT */
     .project-item {
-      background-color: #0d1b2a;
+      background-color: #1a2c44;
       padding: 1rem;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border: 2px solid #f4a261;  /* WYRAŹNEJSZE OBRAMOWANIE */
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
       text-align: center;
       width: 30%;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
     .project-item a {
       color: #f4a261;
@@ -123,94 +148,136 @@
     }
     .project-item p {
       margin-top: 0.5rem;
-      color: #e0e1dd;
+      color: #d0d1cd;
+      font-size: 0.9rem;
     }
-    /* Stopka */
+
+    /* ANIMACJA fade-in-up */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+    .fade-in-up.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* STOPKA (FOOTER) */
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 0.9rem;
       background-color: #0d1b2a;
       color: #e0e1dd;
-      font-size: 0.9rem;
-      border-top: 2px solid #1b263b;
+      font-size: 0.85rem;
+      border-top: 2px solid #f4a261;
+      box-shadow: none;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">
+    <div class="logo fade-in-up">
       <img src="imageslogo.png" alt="Logo">
-      <span>CodePlus</span>
+      CodePlus
     </div>
     <nav>
       <ul class="nav-links">
-        <li><a href="index.html">Strona główna</a></li>
-        <li><a href="news.html">Newsy</a></li>
-        <li><a href="about.html">O mnie</a></li>
-        <li><a href="projects.html">Projekty</a></li>
-        <li><a href="contact.html">Kontakt</a></li>
+        <li><a href="index.html" class="fade-in-up" style="transition-delay: 0.1s;">Strona główna</a></li>
+        <li><a href="news.html" class="fade-in-up" style="transition-delay: 0.2s;">Newsy</a></li>
+        <li><a href="about.html" class="fade-in-up" style="transition-delay: 0.3s;">O mnie</a></li>
+        <li><a href="projects.html" class="fade-in-up" style="transition-delay: 0.4s;">Projekty</a></li>
+        <li><a href="contact.html" class="fade-in-up" style="transition-delay: 0.5s;">Kontakt</a></li>
       </ul>
     </nav>
   </header>
+
   <main>
     <section id="projects">
-      <div class="section-wrapper">
-        <h2>Projekty Developerskie</h2>
+      <!-- Kontener 1: Projekty Developerskie -->
+      <div class="projects-group fade-in-up">
+        <h2 class="section-title">Projekty Developerskie</h2>
         <div class="project-grid">
           <div class="project-item">
-            <h3><a href="https://github.com/Kuzniakers/FabrykaCiast" target="_blank">Fabryka Ciast</a></h3>
-            <p>
-              Prosty projekt uczelniany praktykujący wzorzec projektowy "Singleton".<br>
-              Technologia: C#
-            </p>
+            <h3>
+              <a href="https://github.com/Kuzniakers/FabrykaCiast" target="_blank">
+                Fabryka Ciast
+              </a>
+            </h3>
+            <p>Prosty projekt uczelniany praktykujący wzorzec projektowy "Singleton". Technologia: C#</p>
           </div>
           <div class="project-item">
-            <h3><a href="https://github.com/Kuzniakers/ShoeStore" target="_blank">Sklep obuwniczy</a></h3>
-            <p>
-              Szkielet zaawansowanego sklepu z obuwiem.<br>
-              Technologia: C# MVC
-            </p>
+            <h3>
+              <a href="https://github.com/Kuzniakers/ShoeStore" target="_blank">
+                Sklep obuwniczy
+              </a>
+            </h3>
+            <p>Szkielet zaawansowanego sklepu z obuwiem. Technologia: C# MVC</p>
           </div>
           <div class="project-item">
-            <h3><a href="https://github.com/Kuzniakers/AzureDziennikZywieniowy" target="_blank">Dziennik Zywieniowy
-            </a></h3>
-            <p>
-              Aplikacja webowa stworzona jako projekt zaliczeniowy dla specjalności Cloud Developer - Dziennik Żywieniowy.<br>
-              Technologia: ASP.NET & Azure
-            </p>
+            <h3>
+              <a href="https://github.com/Kuzniakers/AzureDziennikZywieniowy" target="_blank">
+                Dziennik Żywieniowy
+              </a>
+            </h3>
+            <p>Aplikacja webowa jako projekt zaliczeniowy. Technologia: ASP.NET &amp; Azure</p>
           </div>
         </div>
       </div>
-      <div class="section-wrapper">
-        <h2>Projekty Testerskie</h2>
+      <br>
+      <!-- Kontener 2: Projekty Testerskie -->
+      <div class="projects-group fade-in-up">
+        <h2 class="section-title">Projekty Testerskie</h2>
         <div class="project-grid">
           <div class="project-item">
-            <h3><a href="https://github.com/Kuzniakers/PlaywrightTests" target="_blank">Playwright Tests</a></h3>
-            <p>
-              Testy automatyczne przy użyciu frameworku PlayWright.<br>
-              Technologia: JS/TS
-            </p>
+            <h3>
+              <a href="https://github.com/Kuzniakers/PlaywrightTests" target="_blank">
+                Playwright Tests
+              </a>
+            </h3>
+            <p>Testy automatyczne przy użyciu frameworku PlayWright. Technologia: JS/TS</p>
           </div>
           <div class="project-item">
-            <h3><a href="https://github.com/Kuzniakers/Selenium" target="_blank">Selenium Tests</a></h3>
-            <p>
-              Testy automatyczne przy użyciu frameworku Selenium.<br>
-              Technologia: C#
-            </p>
+            <h3>
+              <a href="https://github.com/Kuzniakers/Selenium" target="_blank">
+                Selenium Tests
+              </a>
+            </h3>
+            <p>Testy automatyczne przy użyciu frameworku Selenium. Technologia: C#</p>
           </div>
           <div class="project-item">
-            <h3><a href="https://github.com/Kuzniakers/AllegroTest" target="_blank">Allegro Tests</a></h3>
-            <p>
-              Plan testowy dla "Allegro".<br>
-              Praktyczna wiedza ISTQB
-            </p>
+            <h3>
+              <a href="https://github.com/Kuzniakers/AllegroTest" target="_blank">
+                Allegro Tests
+              </a>
+            </h3>
+            <p>Plan testowy dla "Allegro". Praktyczna wiedza ISTQB</p>
           </div>
         </div>
       </div>
     </section>
   </main>
+<br>
+<br>
+<br>
+
   <footer>
-    <p>&copy; 2025 CodePlus Konrad Kuźniak. Wszystkie prawa zastrzeżone.</p>
+    © 2025 CodePlus Konrad Kuźniak. Wszystkie prawa zastrzeżone.
   </footer>
+
+  <script>
+    // Efekt fade-in-up
+    const faders = document.querySelectorAll(".fade-in-up");
+    const appearOptions = { threshold: 0.15 };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
 </body>
 </html>

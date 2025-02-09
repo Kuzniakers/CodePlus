@@ -7,255 +7,18 @@
     <title>Strona główna | CodePlus</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to bottom, #0d1b2a, #1e3a5f);
-            color: #e0e1dd;
-            line-height: 1.6;
-            margin: 0 auto;
-            max-width: 1200px;
-            overflow-x: hidden;
-            
-        }
-
-        header {
-            background-color: #0d1b2a;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: bold;
-            
-        }
-
-        nav {
-            display: flex;
-            gap: 1rem;
-            margin-left: auto;
-            margin-right: 0px;
-        }
-
-        .nav-links li {
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #0d1b2a;
-            background-color: #f4a261;
-            
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .nav-links a:hover {
-            background-color: #e76f51;
-            color: #ffffff;
-        }
-
-        .hero-section {
-            text-align: center;
-            padding: 5rem 1rem;
-            color: #e0e1dd;
-            background: linear-gradient(180deg, #0d1b2a 30%, #1e3a5f);
-            border-radius: 12px;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero-logo-container {
-            position: relative;
-            display: inline-block;
-            width: 150px;
-            height: 150px;
-            margin-bottom: 2rem;
-        }
-
-        .hero-logo {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            animation: pulse 3s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        .hero-logo-container:hover .hero-logo {
-            animation-duration: 1.5s;
-        }
-
-        .hero-section:hover {
-            background-color: #223c5f;
-        }
-
-        
-
-        .hero-section h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #f4a261;
-        }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero-section .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .cta-buttons a {
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .cta-buttons .primary-btn {
-            background-color: #f4a261;
-            color: #0d1b2a;
-        }
-
-        .cta-buttons .primary-btn:hover {
-            background-color: #e76f51;
-            color: #ffffff;
-        }
-
-        .cta-buttons .secondary-btn {
-            background-color: transparent;
-            border: 2px solid #f4a261;
-            color: #f4a261;
-        }
-
-        .cta-buttons .secondary-btn:hover {
-            background-color: #f4a261;
-            color: #0d1b2a;
-        }
-
-        section {
-            padding: 3rem 1rem;
-            margin: 2rem 0;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-
-        section:hover {
-            background-color: #1e3a5f;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            color: #f4a261;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            justify-content: center;
-        }
-
-        .service-item {
-            background-color: #1e3a5f;
-            border-radius: 10px;
-            padding: 1.5rem;
-            color: #e0e1dd;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: left;
-            transition: transform 0.5s ease, background-color 0.5s ease;
-        }
-
-        .service-item:hover {
-            transform: translateY(-10px) rotate(3deg);
-            background-color: #2b4a7f;
-        }
-
-        .service-item h3 {
-            color: #f4a261;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .technologies {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .tech-icon {
-            width: 80px;
-            height: 80px;
-            background-color: #223c5f;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .tech-icon img {
-            width: 50%;
-            height: auto;
-        }
-
-        .tech-icon:hover {
-            background-color: #f4a261;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #0d1b2a;
-            color: #e0e1dd;
-            font-size: 0.9rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo img {
-            width: 70px;
-            height: auto;
-            border-radius: 50%;
-        }
-    </style>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 <body>
     <header>
-        <div class="logo"><img src="imageslogo.png" alt="Logo">CodePlus</div>
+        <div class="logo fade-in-up"><img src="imageslogo.png" alt="Logo">CodePlus</div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Strona główna</a></li>
-                <li><a href="news.html">Newsy</a></li>
-                <li><a href="about.html">O mnie</a></li>
-                <li><a href="projects.html">Projekty</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="index.html" class="fade-in-up" style="transition-delay: 0.1s;">Strona główna</a></li>
+                <li><a href="news.html" class="fade-in-up" style="transition-delay: 0.2s;">Newsy</a></li>
+                <li><a href="about.html" class="fade-in-up" style="transition-delay: 0.3s;">O mnie</a></li>
+                <li><a href="projects.html" class="fade-in-up" style="transition-delay: 0.4s;">Projekty</a></li>
+                <li><a href="contact.html" class="fade-in-up" style="transition-delay: 0.5s;">Kontakt</a></li>
             </ul>
         </nav>
     </header>
@@ -263,53 +26,89 @@
     <main>
         <section class="hero-section">
             <div class="hero-logo-container">
-                <img src="logotytul.png" alt="CodePlus Logo" class="hero-logo">
+                <img src="logotytul.png" alt="CodePlus Logo" class="hero-logo fade-in-up">
             </div>
-            <h1>CodePlus</h1>
-            <p>Profesjonalne usługi QA, automatyzacja testów oraz nowoczesne strony internetowe.</p>
+            <h1 class="fade-in-up" style="transition-delay: 0.2s;">CodePlus</h1>
+            <p class="fade-in-up" style="transition-delay: 0.4s;">Profesjonalne usługi QA, automatyzacja testów oraz nowoczesne strony internetowe.</p>
             <div class="cta-buttons">
-                <a href="contact.html" class="primary-btn">Skontaktuj się ze mną</a>
-                <a href="projects.html" class="secondary-btn">Zobacz moje projekty</a>
+                <a href="contact.html" class="primary-btn fade-in-up" style="transition-delay: 0s;">Skontaktuj się ze mną</a>
+                <a href="projects.html" class="primary-btn fade-in-up" style="transition-delay: 0s;">Zobacz moje projekty</a>
             </div>
         </section>
 
         <section id="services">
-            <h2 class="section-title">Czym się zajmuję?</h2>
+            <h2 class="section-title fade-in-up">Czym się zajmuję?</h2>
             <div class="services-grid">
-                <div class="service-item">
+                <div class="service-item fade-in-up">
                     <h3>Automatyzacja testów</h3>
                     <p>Tworzę zaawansowane testy automatyczne, wykorzystując Playwright, Selenium i inne narzędzia, aby zapewnić niezawodność aplikacji.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item fade-in-up" style="transition-delay: 0s;">
                     <h3>Testowanie API</h3>
                     <p>Skutecznie testuję interfejsy API przy użyciu Postman i JMeter, dbając o ich wydajność i funkcjonalność.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item fade-in-up" style="transition-delay: 0s;">
                     <h3>Testowanie wydajności</h3>
                     <p>Analizuję aplikacje pod kątem wydajności w różnych warunkach obciążenia.</p>
                 </div>
-                <div class="service-item">
+                <div class="service-item fade-in-up" style="transition-delay: 0s;">
                     <h3>Tworzenie stron internetowych</h3>
                     <p>Tworzę nowoczesne, responsywne strony internetowe, które zachwycają wyglądem i funkcjonalnością.</p>
                 </div>
             </div>
         </section>
 
+      
+
+        <section id="about-summary">
+            <h2 class="section-title fade-in-up">Witaj w moim świecie technologii!</h2>
+            <div class="about-summary-content">
+                <p class="fade-in-up" style="transition-delay: 0.2s;">Jestem pasjonatem programowania, automatyzacji testów i cloud developingu, łączącym kreatywne podejście z rzetelną analizą. Coraz chętniej zgłębiam również obszar sztucznej inteligencji oraz rozwiązania oferowane przez Microsoft czy Google, by tworzyć skalowalne i nowoczesne aplikacje.</p>
+                <p class="fade-in-up" style="transition-delay: 0.4s;"> Na co dzień dbam o wydajność i funkcjonalność projektów, testując je pod kątem najwyższej jakości przy użyciu takich narzędzi jak C#, ASP.NET, Selenium, Playwright czy Azure. Moim celem jest dostarczanie kodu, który nie tylko działa, ale też spełnia oczekiwania użytkowników w zakresie szybkości, intuicyjności i atrakcyjnego interfejsu. Chętnie dzielę się wiedzą i współpracuję z zespołami, wierząc, że sukces w branży IT rodzi się z ciągłej pasji do rozwoju i wspólnego wysiłku.</p>
+                <p class="fade-in-up" style="transition-delay: 0.4s;"> Cieszę się, że jesteś na mojej stronie — rozgość się i zobacz, nad czym obecnie pracuję!</p>
+            </div>
+        </section>
+
         <section id="technologies">
-            <h2 class="section-title">Technologie i Frameworki</h2>
+            <h2 class="section-title fade-in-up">Technologie i Frameworki</h2>
             <div class="technologies">
-                <div class="tech-icon"><img src="selenium-logo.png" alt="Selenium"></div>
-                <div class="tech-icon"><img src="playwright-logo.png" alt="Playwright"></div>
-                <div class="tech-icon"><img src="jmeter-logo.png" alt="JMeter"></div>
-                <div class="tech-icon"><img src="postman-logo.jpg" alt="Postman"></div>
-                <div class="tech-icon"><img src="csharp-logo.png" alt="C#"></div>
-                <div class="tech-icon"><img src="javascript-logo.png" alt="JavaScript"></div>
+                <div class="tech-icon fade-in-up"><img src="selenium-logo.png" alt="Selenium"></div>
+                <div class="tech-icon fade-in-up" style="transition-delay: 0.1s;"><img src="playwright-logo.png" alt="Playwright"></div>
+                <div class="tech-icon fade-in-up" style="transition-delay: 0.1s;"><img src="jmeter-logo.png" alt="JMeter"></div>
+                <div class="tech-icon fade-in-up" style="transition-delay: 0.1s;"><img src="postman-logo.jpg" alt="Postman"></div>
+                <div class="tech-icon fade-in-up" style="transition-delay: 0.1s;"><img src="csharp-logo.png" alt="C#"></div>
+                <div class="tech-icon fade-in-up" style="transition-delay: 0.1;"><img src="javascript-logo.png" alt="JavaScript"></div>
             </div>
         </section>
     </main>
 
     <footer>
-        &copy; 2025 CodePlus Konrad Kuźniak. Wszystkie prawa zastrzeżone.
+        © 2025 CodePlus Konrad Kuźniak. Wszystkie prawa zastrzeżone.
     </footer>
+    <script>
+        const faders = document.querySelectorAll(".fade-in-up");
+
+        const appearOptions = {
+            threshold: 0.15 // Element musi być widoczny w 15%, żeby animacja ruszyła
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(
+            entries,
+            appearOnScroll
+        ) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add("active");
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
 </body>
 </html>
