@@ -6,22 +6,20 @@
   <meta name="description" content="Projekty - CodePlus Konrad Kuźniak">
   <title>Projekty | CodePlus</title>
   <link rel="icon" type="image/x-icon" href="favicon.png">
-
-  <!-- Czcionka Poppins -->
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
     rel="stylesheet"
   >
 
   <style>
-    /* RESET MARGINESÓW */
+    
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* GŁÓWNY UKŁAD STRONY */
+   
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to bottom, #0d1b2a, #1e3a5f);
@@ -32,7 +30,7 @@
       overflow-x: hidden;
     }
 
-    /* NAGŁÓWEK (HEADER) */
+   
     header {
       background-color: #0d1b2a;
       padding: 1rem 2rem;
@@ -87,18 +85,18 @@
       color: #ffffff;
     }
 
-    /* GŁÓWNA ZAWARTOŚĆ */
+
     main {
       padding: 1.5rem 0;
     }
 
-    /* SEKCJA "PROJEKTY" */
+    
     #projects {
-      min-height: 70vh;  /* Rozciąga sekcję przy małej liczbie projektów */
-      margin-bottom: 0;  /* Usunięty dodatkowy odstęp pod sekcją */
+      min-height: 70vh;  
+      margin-bottom: 0;  
     }
 
-    /* Tytuły w sekcji */
+
     .section-title {
       font-size: 2rem;
       color: #f4a261;
@@ -109,14 +107,14 @@
 
     /* Kontenery (grupy) projektów */
     .projects-group {
-      background-color: #0a1422; /* Tło kontenera */
+      background-color: #0a1422; 
       border-radius: 12px;
       padding: 2rem;
       margin-bottom: 2rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
-    /* Układ kart projektów */
+   
     .project-grid {
       display: flex;
       gap: 2rem;
@@ -125,12 +123,12 @@
       margin-top: 1.5rem;
     }
 
-    /* POJEDYNCZY PROJEKT */
+   
     .project-item {
       background-color: #1a2c44;
       padding: 1rem;
       border-radius: 8px;
-      border: 2px solid #f4a261;  /* WYRAŹNEJSZE OBRAMOWANIE */
+      border: 2px solid #f4a261; 
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
       text-align: center;
       width: 30%;
@@ -163,7 +161,7 @@
       transform: translateY(0);
     }
 
-    /* STOPKA (FOOTER) */
+   
     footer {
       text-align: center;
       padding: 0.9rem;
@@ -279,5 +277,14 @@
 
     faders.forEach(fader => appearOnScroll.observe(fader));
   </script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2F1MYPEW2N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2F1MYPEW2N');
+</script>
 </body>
 </html>

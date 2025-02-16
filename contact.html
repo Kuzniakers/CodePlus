@@ -6,22 +6,21 @@
     <meta name="description" content="Kontakt - CodePlus Konrad Kuźniak">
     <title>Kontakt | CodePlus</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    <!-- Import czcionki Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Dodaj tutaj tylko style specyficzne dla strony "Kontakt" */
+        
         #contact {
-            background-color: #0a1422; /* Dodaj tło sekcji kontaktowej */
-            padding: 3rem 1rem; /* Dodaj padding, aby treść nie przylegała do krawędzi */
-            border-radius: 10px; /* Zaokrąglenie rogów */
+            background-color: #0a1422; 
+            padding: 3rem 1rem; 
+            border-radius: 10px;
         }
 
         #contact h2 {
             text-align: center;
             color: #f4a261;
             margin-bottom: 1.5rem;
-            font-size: 1.5rem; /* Jeszcze bardziej zmniejszony rozmiar czcionki */
+            font-size: 1.5rem; 
         }
 
         #contact form {
@@ -67,20 +66,20 @@
             transform: scale(1.05);
         }
 
-        /* Style dla Social Media */
+      
         .social-section {
-            background-color: #0a1422; /* Dodaj tło */
-            border-radius: 10px; /* Zaokrąglenie rogów */
-            padding: 1.5rem; /* Padding wokół treści */
-            text-align: center; /* Wyśrodkowanie tekstu */
-            margin: 2rem auto; /* Wyśrodkowanie bloku i dodanie odstępu */
-            max-width: 800px; /* Ograniczenie szerokości */
+            background-color: #0a1422; 
+            border-radius: 10px; 
+            padding: 1.5rem; 
+            text-align: center; 
+            margin: 2rem auto; 
+            max-width: 800px; 
         }
 
         .social-section h2 {
-            font-size: 1.2rem; /* Zmniejszenie rozmiaru czcionki nagłówka */
-            color: #f4a261; /* Kolor nagłówka */
-            margin-bottom: 1rem; /* Odstęp od tekstu Social Media do linków */
+            font-size: 1.2rem; 
+            color: #f4a261; 
+            margin-bottom: 1rem; 
         }
 
         .social-links {
@@ -95,7 +94,7 @@
             color: #f4a261;
             font-weight: bold;
             transition: color 0.3s;
-            font-size: 0.8rem; /* Jeszcze bardziej zmniejszony rozmiar czcionki */
+            font-size: 0.8rem; 
         }
 
         .social-links a:hover {
@@ -133,7 +132,7 @@
                 <button type="submit" class="contact-button">Wyślij</button>
             </form>
         </section>
-        <!-- Wklejony blok Social Media -->
+       
         <div class="about-block social-section fade-in-up">
             <h2 class="section-title">Social Media</h2>
             <div class="social-links">
@@ -151,7 +150,7 @@
         const faders = document.querySelectorAll(".fade-in-up");
 
         const appearOptions = {
-            threshold: 0.15 // Element musi być widoczny w 15%, żeby animacja ruszyła
+            threshold: 0.15 
         };
 
         const appearOnScroll = new IntersectionObserver(function(
@@ -172,5 +171,14 @@
             appearOnScroll.observe(fader);
         });
     </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2F1MYPEW2N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2F1MYPEW2N');
+</script>
 </body>
 </html>
