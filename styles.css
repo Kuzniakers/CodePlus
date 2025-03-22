@@ -686,6 +686,40 @@ iframe {
         }
       }
     }
+    @media (max-width: 768px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+          padding: 0 1rem;
+        }
+      
+        .service-item {
+          width: 100%;
+        }
+      }
+      @media (max-width: 768px) {
+        .about-section {
+          flex-direction: column;
+          text-align: center;
+          padding: 1.5rem 1rem;
+        }
+      
+        .about-text {
+          padding: 0;
+          text-align: center;
+        }
+      
+        .about-photo {
+          margin-bottom: 1rem;
+        }
+      
+        .about-photo img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+      
+      
       
 
   
