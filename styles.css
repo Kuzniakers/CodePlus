@@ -565,3 +565,129 @@ iframe {
 .service-item:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
+
+.social-links a {
+    margin: 0 10px;
+    font-size: 28px;
+    color: #ff9950;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+}
+
+
+
+
+  
+  /* Burger icon */
+.burger {
+    display: none;
+    font-size: 28px;
+    color: #ff9950;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  /* Ukryj mobilne menu domyślnie */
+  .nav-mobile.hidden {
+    display: none;
+  }
+  
+  /* Styl menu mobilnego */
+  .nav-mobile {
+    background-color: #121d2e;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .nav-mobile .nav-links li {
+    margin: 10px 0;
+  }
+  
+  .nav-mobile a {
+    color: #ff9950;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  
+  /* MOBILE ONLY - max 768px */
+@media (max-width: 768px) {
+    .nav-desktop {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      position: absolute !important;
+    }
+  
+    .burger {
+      display: block;
+    }
+  
+    .nav-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        background-color: #0a1422;
+        z-index: 999;
+        border-bottom: 2px solid #f4a261;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        border-radius: 0 0 12px 12px;
+        animation: slideDown 0.3s ease-out;
+      }
+      
+      .nav-mobile .nav-links {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        gap: 12px;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .nav-mobile .nav-links li {
+        list-style: none;
+      }
+      
+      .nav-mobile a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #ff9950;
+        padding: 10px 20px;
+        background-color: #182336;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      .nav-mobile a:hover {
+        background-color: #f4a261;
+        color: #0d1b2a;
+      }
+      
+      
+      /* Prosta animacja rozwijania */
+      @keyframes slideDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+      
+
+  
+  
+  

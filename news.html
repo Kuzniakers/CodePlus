@@ -2,6 +2,7 @@
 <html lang="pl">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js"></script>
@@ -96,12 +97,35 @@
             font-size: 1rem;
         }
     </style>
+    <script>
+        function toggleMenu() {
+          const menu = document.getElementById("mobileMenu");
+          menu.classList.toggle("hidden");
+        }
+      
+        // Zamykanie po kliknięciu w link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+          link.addEventListener('click', () => {
+            document.getElementById("mobileMenu").classList.add("hidden");
+          });
+        });
+      </script>
 </head>
 
 <body>
     <header>
         <div class="logo fade-in-up"><img src="imageslogo.png" alt="Logo">CodePlus</div>
-        <nav>
+        <div class="burger" onclick="toggleMenu()">☰</div>
+        <nav class="nav-mobile hidden" id="mobileMenu">
+            <ul class="nav-links">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="news.html">Newsy</a></li>
+                <li><a href="about.html">O mnie</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <nav class ="nav-desktop">
             <ul class="nav-links">
                 <li><a href="index.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.1s;">Strona
                         główna</a></li>
@@ -119,7 +143,35 @@
         <section id="news">
             <h1 class="fade-in-up" style="color: #f4a261; font-size: 2rem">Newsy</h1>
 
+            <div class="news-item fade-in-up" data-news-id="5">
+                <h3 style="text-align: center;"> "Umiejętności Jutra – AI" od Google zaliczone!</h3>
+                <img src="UmiejetnosciJutra-1.png" alt="Umiejętności Jutra AI" class="news-image">
+                <p>Z dumą mogę powiedzieć, że jestem absolwentem programu "Umiejętności Jutra – AI", organizowanego przez Google i SGH. Ten intensywny, 5-tygodniowy kurs, którego celem było przygotowanie
+                     do pracy z narzędziami sztucznej inteligencji, z naciskiem na praktyczne zastosowanie AI w projektach technologicznych dał mi na prawdę dawkę zupełnie innego, świeżego spojrzenia na sztuczną inteligencje i tylko umocnił mnie w
+                     przekonaniu jak potężne i użyteczne może być każde z narzędzi, o którym była mowa w kursie.
 
+                W trakcie programu miałem okazję:  </br>
+            </br>✅ Poznać fundamenty uczenia maszynowego i przetwarzania języka naturalnego
+            </br>✅ Pracować z nowoczesnymi modelami AI w środowisku Google Cloud
+            </br>✅ Zrozumieć odpowiedzialne i etyczne podejście do tworzenia rozwiązań opartych na AI
+            </br>✅ Rozwinąć umiejętności analizy danych, wykorzystywania AI w aplikacjach oraz automatyzacji zadań
+             </br>✅ Poznać wiele ciekawych narzędzi oparych na AI, do topwych zaliczam: <b>NotebookLM</b>, dla porządkowania notatek, <b>ElevenLabs</b> tworzący identyczną kopie głosu czy chociażby <b>HeyGen</b> do tworzenia wideo ze zdjęcią !
+                
+             </br> </br>Na zakończenie uzyskałem certyfikat potwierdzający zdobycie praktycznych kompetencji w obszarze AI – kolejny krok w mojej drodze do budowania własnych, inteligentnych rozwiązań.
+   
+               <br></br> To dla mnie ważny etap – i świetne uzupełnienie wcześniejszych szkoleń z Google Cloud. Teraz czas połączyć te dwa światy: AI + Cloud = potężne możliwości! 🔗☁️🤖
+             
+
+                <div class="comment-section">
+                    <h4>Dodaj komentarz:</h4>
+                    <form>
+                        <input type="text" placeholder="Twoje imię" required>
+                        <textarea rows="3" placeholder="Twój komentarz" required></textarea>
+                        <button type="submit">Dodaj komentarz</button>
+                    </form>
+                    <div class="comments-list"></div>
+                </div>
+            </div>
             <div class="news-item fade-in-up" data-news-id="4">
                 <h3 style="text-align: center;">Sukces! Certyfikat Google Cloud zdobyty!</h3>
                 <p>Ostatnio, a konkretniej 27 stycznia, miałem okazję uczestniczyć w intensywnym szkoleniu z zakresu Google Cloud Fundamentals: Core Infrastructure. Było to siedem modułów pełnych praktycznej wiedzy o chmurze, zarządzaniu zasobami, bezpieczeństwie i optymalizacji aplikacji.

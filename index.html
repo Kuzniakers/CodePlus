@@ -8,11 +8,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("hidden");
+    }
+  
+    // Zamykanie po kliknięciu w link
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById("mobileMenu").classList.add("hidden");
+      });
+    });
+  </script>
+  
 <body>
     <header>
         <div class="logo fade-in-up"><img src="imageslogo.png" alt="Logo">CodePlus</div>
-        <nav>
+        <div class="burger" onclick="toggleMenu()">☰</div>
+        <nav class="nav-mobile hidden" id="mobileMenu">
+            <ul class="nav-links">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="news.html">Newsy</a></li>
+                <li><a href="about.html">O mnie</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <nav class="nav-desktop">
             <ul class="nav-links">
                 <li><a href="index.html" class="fade-in-up" style="transition-delay: 0.1s;">Strona główna</a></li>
                 <li><a href="news.html" class="fade-in-up" style="transition-delay: 0.2s;">Newsy</a></li>
@@ -78,9 +103,26 @@
                 <div class="tech-icon fade-in-up" style="transition-delay: 0.1s;"><img src="Logo_C_sharp.svg" alt="C#"></div>
                 <div class="tech-icon fade-in-up" style="transition-delay: 0.1;"><img src="javascript-logo.png" alt="JavaScript"></div>
             </div>
+            
         </section>
+        
     </main>
+    <section id="technologies">
 
+        <h2 class="section-title">Social Media</h2>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/konrad-ku%C5%BAniak-96912323b/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Kuzniakers/" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.facebook.com/konrad.kuzniak.7" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+    </section>
+    </div>
     <footer>
         © 2025 CodePlus Konrad Kuźniak. Wszystkie prawa zastrzeżone.
     </footer>

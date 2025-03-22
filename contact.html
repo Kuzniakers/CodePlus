@@ -8,7 +8,9 @@
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+        
         
         #contact {
             background-color: #0a1422; 
@@ -89,18 +91,33 @@
             margin-top: 1rem;
         }
 
+       
         .social-links a {
-            text-decoration: none;
-            color: #f4a261;
-            font-weight: bold;
-            transition: color 0.3s;
-            font-size: 0.8rem; 
+    margin: 0 10px;
+    font-size: 28px;
+    color: #ff9950;
+    transition: transform 0.2s ease, color 0.2s ease;
         }
 
-        .social-links a:hover {
-            color: #e76f51;
+.social-links a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
         }
     </style>
+    
+    <script>
+        function toggleMenu() {
+          const menu = document.getElementById("mobileMenu");
+          menu.classList.toggle("hidden");
+        }
+      
+        // Zamykanie po kliknięciu w link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+          link.addEventListener('click', () => {
+            document.getElementById("mobileMenu").classList.add("hidden");
+          });
+        });
+      </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.querySelector('form');
@@ -139,13 +156,23 @@
 <body>
     <header>
         <div class="logo fade-in-up"><img src="imageslogo.png" alt="Logo">CodePlus</div>
-        <nav>
+        <div class="burger" onclick="toggleMenu()">☰</div>
+        <nav class="nav-mobile hidden" id="mobileMenu">
             <ul class="nav-links">
-                <li><a href="index.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.1s;">Strona główna</a></li>
-                <li><a href="news.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.2s;">Newsy</a></li>
-                <li><a href="about.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.3s;">O mnie</a></li>
-                <li><a href="projects.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.4s;">Projekty</a></li>
-                <li><a href="contact.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.5s;">Kontakt</a></li>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="news.html">Newsy</a></li>
+                <li><a href="about.html">O mnie</a></li>
+                <li><a href="projects.html">Projekty</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+        </nav>
+        <nav class="nav-desktop">
+            <ul class="nav-links">
+                <li><a href="index.html" class="fade-in-up" style="transition-delay: 0.1s;">Strona główna</a></li>
+                <li><a href="news.html" class="fade-in-up" style="transition-delay: 0.2s;">Newsy</a></li>
+                <li><a href="about.html" class="fade-in-up" style="transition-delay: 0.3s;">O mnie</a></li>
+                <li><a href="projects.html" class="fade-in-up" style="transition-delay: 0.4s;">Projekty</a></li>
+                <li><a href="contact.html" class="fade-in-up" style="transition-delay: 0.5s;">Kontakt</a></li>
             </ul>
         </nav>
     </header>
@@ -171,10 +198,17 @@
         <div class="about-block social-section fade-in-up">
             <h2 class="section-title">Social Media</h2>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/konrad-ku%C5%BAniak-96912323b/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/Kuzniakers/" target="_blank">GitHub</a>
-                <a href="https://www.facebook.com/konrad.kuzniak.7" target="_blank">Facebook</a>
+                <a href="https://www.linkedin.com/in/konrad-ku%C5%BAniak-96912323b/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Kuzniakers/" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.facebook.com/konrad.kuzniak.7" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
             </div>
+        </div>
         </div>
     </main>
 <br>

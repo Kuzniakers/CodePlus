@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Projekty - CodePlus Konrad Kuźniak">
   <title>Projekty | CodePlus</title>
+  <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/x-icon" href="favicon.png">
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
@@ -68,18 +69,8 @@
       margin: 0;
       padding: 0;
     }
-    .nav-links a {
-      text-decoration: none;
-      color: #0d1b2a;
-      background-color: #f4a261;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      font-weight: bold;
-      font-size: 1.1rem;
-      padding: 0.5rem 1rem;
-      display: block;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
+   
+    
     .nav-links a:hover {
       background-color: #e76f51;
       color: #ffffff;
@@ -105,7 +96,7 @@
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
-    /* Kontenery (grupy) projektów */
+
     .projects-group {
       background-color: #0a1422; 
       border-radius: 12px;
@@ -171,24 +162,60 @@
       border-top: 2px solid #f4a261;
       box-shadow: none;
     }
+    @media (max-width: 768px) {
+  .project-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .project-item {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
   </style>
 </head>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
+  }
+
+  // Zamykanie po kliknięciu w link
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById("mobileMenu").classList.add("hidden");
+    });
+  });
+</script>
 <body>
   <header>
-    <div class="logo fade-in-up">
-      <img src="imageslogo.png" alt="Logo">
-      CodePlus
-    </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html" class="fade-in-up" style="transition-delay: 0.1s;">Strona główna</a></li>
-        <li><a href="news.html" class="fade-in-up" style="transition-delay: 0.2s;">Newsy</a></li>
-        <li><a href="about.html" class="fade-in-up" style="transition-delay: 0.3s;">O mnie</a></li>
-        <li><a href="projects.html" class="fade-in-up" style="transition-delay: 0.4s;">Projekty</a></li>
-        <li><a href="contact.html" class="fade-in-up" style="transition-delay: 0.5s;">Kontakt</a></li>
-      </ul>
+    <div class="logo fade-in-up"><img src="imageslogo.png" alt="Logo">CodePlus</div>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <nav class="nav-mobile hidden" id="mobileMenu">
+        <ul class="nav-links">
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="news.html">Newsy</a></li>
+            <li><a href="about.html">O mnie</a></li>
+            <li><a href="projects.html">Projekty</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
     </nav>
-  </header>
+    <nav class ="nav-desktop">
+        <ul class="nav-links">
+            <li><a href="index.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.1s;">Strona
+                    główna</a></li>
+            <li><a href="news.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.2s;">Newsy</a></li>
+            <li><a href="about.html" class="menu-button styled-button fade-in-up" style="transition-delay: 0.3s;">O mnie</a></li>
+            <li><a href="projects.html" class="menu-button styled-button fade-in-up"
+                    style="transition-delay: 0.4s;">Projekty</a></li>
+            <li><a href="contact.html" class="menu-button styled-button fade-in-up"
+                    style="transition-delay: 0.5s;">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
 
   <main>
     <section id="projects">
